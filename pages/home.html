@@ -1,0 +1,85 @@
+
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-bg"></div>
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <svg height="28" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
+        <path d="m22 11h-17.586l5.293-5.293a1 1 0 1 0 -1.414-1.414l-7 7a1 1 0 0 0 0 1.414l7 7a1 1 0 0 0 1.414-1.414l-5.293-5.293h17.586a1 1 0 0 0 0-2z"/>
+      </svg>
+
+          </a>
+        </div>
+        <div class="title">Synchronisation de fiche</div>
+      </div>
+    </div>
+    <div class="page-content">
+
+
+
+   ${list  && $h`
+
+
+       <div class="list  media-list inset">
+        <ul>
+
+
+          ${list.map((list) => $h`
+             
+            <a href="/synchrofile/${list}" class="item-link item-content">
+             
+              <div class="item-media">
+                <i class="fas fa-folder fa-3x"></i>
+              </div>
+
+              <div class="item-inner">
+                <div class="item-title-row">
+                  <div class="item-title">${list}</div>
+                </div>
+                
+              </div>
+
+
+            </a>
+
+
+          `)}
+
+
+        </ul>
+      </div>
+
+      `}
+      ${!list && $h`
+
+
+        <div class="block block-strong text-align-center">
+          <div class="preloader"></div>
+        </div>
+      `}
+
+
+      ${ taille ===0  && $h`
+
+        <div class="block block-strong text-align-center">
+            
+        <h3>AUCUNE FICHE DISPONIBLE</h3>
+
+          </div>
+
+      `}
+
+        <div class="fab-backdrop"></div>
+          <div @click="" class="fab fab-right-bottom">
+
+            <a href="#">
+              <i class="fas fa-sync-alt fa-2x" style="color:#fff"></i>
+            </a>
+            
+
+          </div>
+
+    </div>
+  </div>
+  
